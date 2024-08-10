@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import { userSelectorFamily, usersSelectorWaitForAll, usersSelectorWaitForNone } from '@states/selector/UserSelector';
-import {useRecoilState, useRecoilValue, useRecoilValueLoadable} from 'recoil';
+import {useRecoilState, useRecoilValue, useRecoilValueLoadable, RecoilEnv} from 'recoil';
 import Counter from './pages/recoil/Counter';
 import Todo from './pages/recoil/Todo';
+
+// Duplicate atom key Error 방지
+RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 
 function AppRecoil() {
 
